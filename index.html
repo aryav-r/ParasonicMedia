@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parasonic Media | Digital Marketing</title>
+    <meta name="description" content="Digital marketing that actually works. Video edits, branding, monthly packages.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ============================================
+           CSS CUSTOM PROPERTIES
+           ============================================ */
+
+        :root {
+            --color-bg: #0D0D0D;
+            --color-surface: #1A1A1A;
+            --color-surface-light: #242424;
+            --color-border: #2D2D2D;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #A0A0A0;
+            --color-text-muted: #6B6B6B;
+            --color-accent: #C8FF6E;
+            --color-accent-pink: #FF6B9D;
+            --color-accent-blue: #6B9DFF;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-speed: 0.3s;
+            --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ============================================
+           HTML & BODY BASE CONFIGURATION
+           ============================================ */
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TYPOGRAPHY SYSTEM
+           ============================================ */
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            margin-bottom: var(--spacing-md);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h4 {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+
+        /* ============================================
+           TEXT UTILITY CLASSES
+           ============================================ */
+
+        .text-large {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .text-small {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ============================================
+           LAYOUT CONTAINER SYSTEM
+           ============================================ */
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .section-small {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
+
+        .header {
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.75rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+        }
+
+        /* ============================================
+           BUTTON COMPONENTS
+           ============================================ */
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-speed) var(--transition-ease);
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-family);
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .btn-primary:hover {
+            background: #B5FF3D;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(200, 255, 110, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* Small button variant for header */
+        .btn-small {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-large {
+            padding: 1.25rem 3rem;
+            font-size: 1.125rem;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           GRID LAYOUT SYSTEM
+           ============================================ */
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* ============================================
+           CARD COMPONENTS
+           ============================================ */
+
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            transition: all var(--transition-speed) var(--transition-ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--color-surface-light);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(200, 255, 110, 0.1);
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 100px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .card-description {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* ============================================
+           SERVICE LIST COMPONENTS
+           ============================================ */
+
+        .service-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            font-weight: 500;
+            color: var(--color-text-primary);
+            flex: 1;
+        }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: 1.125rem;
+            margin-left: var(--spacing-md);
+        }
+
+        /* ============================================
+           PRICING CARD COMPONENTS
+           ============================================ */
+
+        .pricing-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            transition: all var(--transition-speed) var(--transition-ease);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-accent);
+            box-shadow: 0 20px 50px rgba(200, 255, 110, 0.15);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, rgba(200, 255, 110, 0.05), rgba(200, 255, 110, 0.02));
+            border-color: var(--color-accent);
+        }
+
+        .pricing-header {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pricing-description {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-accent);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: var(--spacing-lg) 0;
+            flex: 1;
+        }
+
+        .pricing-feature {
+            padding: var(--spacing-sm) 0;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .pricing-feature::before {
+            content: "\2192";
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        /* ============================================
+           SECTION HEADER COMPONENTS
+           ============================================ */
+
+        .section-header {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+
+        .cta-section {
+            text-align: center;
+            padding: var(--spacing-3xl) 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .cta-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-description {
+            font-size: 1.5rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-email {
+            color: var(--color-accent);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.75rem;
+            display: inline-block;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .cta-email:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+
+        .footer {
+            border-top: 1px solid var(--color-border);
+            padding: var(--spacing-2xl) 0;
+            margin-top: var(--spacing-3xl);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* ============================================
+           ANIMATIONS & KEYFRAMES
+           ============================================ */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        /* ============================================
+           RESPONSIVE BREAKPOINTS - TABLET
+           ============================================ */
+
+        @media (max-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE BREAKPOINTS - MOBILE
+           ============================================ */
+
+        @media (max-width: 768px) {
+            :root {
+                --spacing-xs: 0.375rem;
+                --spacing-sm: 0.75rem;
+                --spacing-md: 1rem;
+                --spacing-lg: 1.5rem;
+                --spacing-xl: 2rem;
+                --spacing-2xl: 3rem;
+                --spacing-3xl: 4rem;
+            }
+
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+
+            .card {
+                padding: var(--spacing-lg);
+            }
+
+            .pricing-card {
+                padding: var(--spacing-lg);
+            }
+
+            .cta-email {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE BREAKPOINTS - SMALL MOBILE
+           ============================================ */
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-accent {
+            color: var(--color-accent);
+        }
+
+        .mb-sm {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .mb-md {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .mb-lg {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .mb-xl {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .mt-sm {
+            margin-top: var(--spacing-sm);
+        }
+
+        .mt-md {
+            margin-top: var(--spacing-md);
+        }
+
+        .mt-lg {
+            margin-top: var(--spacing-lg);
+        }
+
+        .mt-xl {
+            margin-top: var(--spacing-xl);
+        }
+
+        /* ============================================
+           SCROLL REVEAL EFFECTS
+           ============================================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           HIGHLIGHT EFFECTS
+           ============================================ */
+
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: var(--color-accent);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* ============================================
+           ADDITIONAL SPACING UTILITIES
+           ============================================ */
+
+        .p-sm {
+            padding: var(--spacing-sm);
+        }
+
+        .p-md {
+            padding: var(--spacing-md);
+        }
+
+        .p-lg {
+            padding: var(--spacing-lg);
+        }
+
+        .p-xl {
+            padding: var(--spacing-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER SECTION
+         ============================================ -->
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">Parasonic Media</div>
+                <a href="mailto:parasonicmedia@gmail.com?subject=Interested%20in%20your%20services" class="btn btn-outline btn-small">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">We make you viral in this AI era</h1>
+                <p class="hero-subtitle fade-in delay-1">Digital marketing without the fluff. We handle your reels, posts, and branding so you can focus on running your business. Real results, no corporate nonsense.</p>
+                <div class="hero-buttons fade-in delay-2">
+                    <a href="mailto:parasonicmedia@gmail.com?subject=Let's%20work%20together" class="btn btn-primary btn-large">Start Your Project</a>
+                    <a href="#services" class="btn btn-outline btn-large">See What We Do</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         QUICK SERVICES SECTION
+         ============================================ -->
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Quick Turnaround</span>
+                <h2 class="section-title">Fast Services for Small Budgets</h2>
+                <p class="section-subtitle">Need something done quick? These are perfect for getting started without breaking the bank.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- Video Edits Card -->
+                <div class="card reveal">
+                    <div class="card-header">
+                        <span class="card-tag">Video Edits</span>
+                        <h3 class="card-title">Short Form Content</h3>
+                        <p class="card-description">Reels are the new business cards. We edit them fast.</p>
+                    </div>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <span class="service-name">Simple Reel Edit</span>
+                            <span class="service-price">₹249</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Bulk Pack (10 Reels)</span>
+                            <span class="service-price">₹2,000</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Product Showcase</span>
+                            <span class="service-price">₹499</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Testimonial Cleanup</span>
+                            <span class="service-price">₹299</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Design Card -->
+                <div class="card reveal delay-1">
+                    <div class="card-header">
+                        <span class="card-tag">Design</span>
+                        <h3 class="card-title">Visual Branding</h3>
+                        <p class="card-description">Look professional without hiring a full time designer.</p>
+                    </div>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <span class="service-name">Logo Design (3 Options)</span>
+                            <span class="service-price">₹999</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Digital Visiting Card</span>
+                            <span class="service-price">₹499</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Festival Post</span>
+                            <span class="service-price">₹149</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Menu Digitization</span>
+                            <span class="service-price">₹499</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">YouTube Thumbnail</span>
+                            <span class="service-price">₹199</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Setup Card -->
+                <div class="card reveal delay-2">
+                    <div class="card-header">
+                        <span class="card-tag">Setup</span>
+                        <h3 class="card-title">Account Infrastructure</h3>
+                        <p class="card-description">Get your accounts set up properly from day one.</p>
+                    </div>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <span class="service-name">Google My Business</span>
+                            <span class="service-price">₹1,499</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">Facebook + Instagram Setup</span>
+                            <span class="service-price">₹999</span>
+                        </li>
+                        <li class="service-item">
+                            <span class="service-name">WhatsApp Automation</span>
+                            <span class="service-price">₹1,499</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MONTHLY PACKAGES SECTION
+         ============================================ -->
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Monthly Retainers</span>
+                <h2 class="section-title">Consistent Growth Every Month</h2>
+                <p class="section-subtitle">Stop worrying about content. We handle everything on a recurring basis.</p>
+            </div>
+
+            <div class="grid grid-4">
+                <!-- Starter Package -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Digital Shuruwaat</h4>
+                        <p class="pricing-description">Perfect for getting started</p>
+                    </div>
+                    <div class="pricing-price">₹2,999<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">10 Static Posts</li>
+                        <li class="pricing-feature">1 Basic Reel</li>
+                        <li class="pricing-feature">5 Review Replies</li>
+                        <li class="pricing-feature">Monthly Report</li>
+                    </ul>
+                </div>
+
+                <!-- Local Package -->
+                <div class="pricing-card featured reveal delay-1">
+                    <div class="pricing-header">
+                        <span class="card-tag">Most Popular</span>
+                        <h4 class="pricing-name">Local Booster</h4>
+                        <p class="pricing-description">For local businesses</p>
+                    </div>
+                    <div class="pricing-price">₹6,999<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">15 Static Posts</li>
+                        <li class="pricing-feature">4 Reels per Week</li>
+                        <li class="pricing-feature">GMB Weekly Updates</li>
+                        <li class="pricing-feature">Basic Engagement</li>
+                    </ul>
+                </div>
+
+                <!-- Daily Package -->
+                <div class="pricing-card reveal delay-2">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Daily Active</h4>
+                        <p class="pricing-description">Stay top of mind</p>
+                    </div>
+                    <div class="pricing-price">₹12,000<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">30 Creative Posts</li>
+                        <li class="pricing-feature">8 Reels Bi-weekly</li>
+                        <li class="pricing-feature">Cross Platform Posting</li>
+                        <li class="pricing-feature">1 Ad Campaign Setup</li>
+                    </ul>
+                </div>
+
+                <!-- Viral Package -->
+                <div class="pricing-card reveal delay-3">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Viral Reel</h4>
+                        <p class="pricing-description">Reel domination</p>
+                    </div>
+                    <div class="pricing-price">₹18,000<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">30 Reels Daily</li>
+                        <li class="pricing-feature">Scripting + Hooks</li>
+                        <li class="pricing-feature">Pro Editing</li>
+                        <li class="pricing-feature">Trending Audio Research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HIGH TICKET SERVICES SECTION
+         ============================================ -->
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">One Time Services</span>
+                <h2 class="section-title">High Impact Projects</h2>
+                <p class="section-subtitle">Bigger projects that set you up for long term success.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- Landing Page -->
+                <div class="card reveal">
+                    <div class="card-header">
+                        <span class="card-tag">Web</span>
+                        <h3 class="card-title">Landing Page</h3>
+                        <p class="card-description">A dedicated one page website built for conversions. Fast, clean, and mobile optimized.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-name">Starting at</span>
+                        <span class="service-price">₹4,999</span>
+                    </div>
+                </div>
+
+                <!-- Paid Ads -->
+                <div class="card reveal delay-1">
+                    <div class="card-header">
+                        <span class="card-tag">Advertising</span>
+                        <h3 class="card-title">Paid Ad Campaign</h3>
+                        <p class="card-description">Complete setup for Facebook and Instagram ads. Includes research and 3 creatives.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-name">One time fee</span>
+                        <span class="service-price">₹4,999</span>
+                    </div>
+                </div>
+
+                <!-- Social Audit -->
+                <div class="card reveal delay-2">
+                    <div class="card-header">
+                        <span class="card-tag">Strategy</span>
+                        <h3 class="card-title">Social Media Audit</h3>
+                        <p class="card-description">Detailed review of your current presence with a PDF roadmap of what to fix.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-name">Complete audit</span>
+                        <span class="service-price">₹1,999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA / CONTACT SECTION
+         ============================================ -->
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title reveal">Ready to get started?</h2>
+            <p class="cta-description reveal delay-1">Email us and we will respond quickly. No sales calls, no pushy tactics. Just a straightforward conversation about your needs.</p>
+            
+            <a href="mailto:parasonicmedia@gmail.com" class="cta-email reveal delay-2">parasonicmedia@gmail.com</a>
+            
+            <div class="reveal delay-3">
+                <a href="mailto:parasonicmedia@gmail.com?subject=I%20want%20to%20work%20together" class="btn btn-primary btn-large" style="margin-top: 2rem;">Send Us an Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER SECTION
+         ============================================ -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 Parasonic Media. All rights reserved.</p>
+                <p class="footer-text">Mumbai, India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT - SCROLL ANIMATIONS
+         ============================================ -->
+
+    <script>
+        // Select all elements with reveal class
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        // Function to check if elements are in viewport
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        // Initial check on page load
+        revealOnScroll();
+
+        // Throttle scroll event for performance
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    revealOnScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Trigger fade in animations on load
+        window.addEventListener('load', () => {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                element.style.opacity = '1';
+            });
+        });
+    </script>
+
+</body>
+</html>
